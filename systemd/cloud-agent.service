@@ -1,0 +1,15 @@
+[Unit]
+Description=Cloud Agent Service
+After=network.target cloud-agent.socket
+Requires=cloud-agent.socket
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /opt/agent/server.py
+TimeoutStopSec=5
+Restart=always
+NonBlocking=true
+
+[Install]
+WantedBy=multi-user.target
+

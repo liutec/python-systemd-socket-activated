@@ -1,0 +1,10 @@
+[Unit]
+Description=Cloud Agent Socket
+PartOf=cloud-agent.service
+
+[Socket]
+ListenStream=0.0.0.0:9999
+
+[Install]
+WantedBy=sockets.target
+
